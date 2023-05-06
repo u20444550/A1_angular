@@ -1,0 +1,46 @@
+
+<div class="table-container">
+  <table class="table" *ngIf="courses">
+    <thead>
+      <tr>
+        <th>Name</th>
+        
+        <th>Duration</th>
+
+        <th>Description</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courses, let i = index">
+
+        <td>{{ course.name }}</td>
+      
+        <td>{{ course.duration }}</td>
+
+        <td>{{ course.description }}</td>
+        <br>
+        <td>
+          
+
+          <button type="buton" class="btn btn-primary" (click)="editItem(course)">EDIT</button>
+          <button class="btn btn-danger" (click)="deleteCourse(course.courseId)">DELETE</button>
+
+         
+        </td>
+
+      </tr>
+      <br>
+
+      
+
+
+    </tbody>
+  </table>
+  <br>
+  <br>
+ 
+    <a class="btn btn-success" [routerLink]="['/addcourse']" >Add Course</a>
+  
+</div>
